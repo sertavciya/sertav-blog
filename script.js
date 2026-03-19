@@ -126,4 +126,109 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // --- LANGUAGE TRANSLATION LOGIC ---
+    const translations = {
+        "head_title": { "tr": "Sertav Ciya Timurtas | İş Analisti", "en": "Sertav Ciya Timurtas | Business Analyst", "de": "Sertav Ciya Timurtas | Business Analyst" },
+        "nav_home": { "tr": "Ana Sayfa", "en": "Home", "de": "Startseite" },
+        "nav_about": { "tr": "Hakkımda", "en": "About", "de": "Über mich" },
+        "nav_experience": { "tr": "Deneyim", "en": "Experience", "de": "Erfahrung" },
+        "nav_projects": { "tr": "Projeler", "en": "Projects", "de": "Projekte" },
+        "nav_contact": { "tr": "İletişim", "en": "Contact", "de": "Kontakt" },
+        "greeting": { "tr": "Merhaba, ben", "en": "Hello, I am", "de": "Hallo, ich bin" },
+        "role": { "tr": "İş Analisti ve Yazılım Mühendisi", "en": "Business Analyst & Software Engineer", "de": "Business Analyst & Softwareentwickler" },
+        "description": { "tr": "Yenilikçi yazılım çözümleri, veri analizi ve mikroservis mimarileri üzerine odaklanan deneyimli bir iş analistiyim. Modern arayüzler ve güçlü sistemler tasarlıyorum.", "en": "Experienced business analyst focusing on innovative software solutions, data analysis, and microservices architectures. I design modern interfaces and robust systems.", "de": "Erfahrener Business Analyst mit Fokus auf innovative Softwarelösungen, Datenanalyse und Microservices-Architekturen. Ich entwerfe moderne Schnittstellen und robuste Systeme." },
+        "location": { "tr": "Dresden, Almanya", "en": "Dresden, Germany", "de": "Dresden, Deutschland" },
+        "btn_contact": { "tr": "İletişime Geç", "en": "Contact Me", "de": "Kontaktiere mich" },
+        "btn_projects": { "tr": "Projelerimi Gör", "en": "View Projects", "de": "Projekte ansehen" },
+        "profile_title": { "tr": "Profil", "en": "Profile", "de": "Profil" },
+        "skills_title": { "tr": "Temel Yetenekler", "en": "Core Skills", "de": "Kernkompetenzen" },
+        "skill_1": { "tr": "İş Analizi", "en": "Business Analysis", "de": "Business-Analyse" },
+        "skill_4": { "tr": "Çevik (Agile)", "en": "Agile", "de": "Agil" },
+        "about_title_1": { "tr": "Hakkımda &", "en": "About &", "de": "Über mich &" },
+        "about_title_2": { "tr": "Eğitim", "en": "Education", "de": "Bildung" },
+        "edu_title": { "tr": "Eğitim", "en": "Education", "de": "Bildung" },
+        "edu_period": { "tr": "Eylül 2018 – Temmuz 2023", "en": "September 2018 – July 2023", "de": "September 2018 – Juli 2023" },
+        "edu_school": { "tr": "Beykent Üniversitesi", "en": "Beykent University", "de": "Beykent Universität" },
+        "edu_loc": { "tr": "İstanbul, Türkiye", "en": "Istanbul, Turkey", "de": "Istanbul, Türkei" },
+        "edu_degree": { "tr": "Bilgisayar Mühendisliği Lisans Derecesi", "en": "Bachelor's Degree in Computer Engineering", "de": "Bachelor-Abschluss in Informatik" },
+        "skills_section_title": { "tr": "Yetenekler", "en": "Skills", "de": "Fähigkeiten" },
+        "skill_cat_1": { "tr": "Veri ve Veritabanı", "en": "Data & Database", "de": "Daten & Datenbank" },
+        "skill_cat_2": { "tr": "İş Analizi", "en": "Business Analysis", "de": "Business-Analyse" },
+        "skill_cat_3": { "tr": "Araçlar ve Yöntemler", "en": "Tools & Methods", "de": "Werkzeuge & Methoden" },
+        "sc1_t1": { "tr": "İleri Düzey SQL", "en": "Advanced SQL", "de": "Erweitertes SQL" },
+        "sc1_t2": { "tr": "Sorgu Optimizasyonu", "en": "Query Optimization", "de": "Abfrageoptimierung" },
+        "sc1_t3": { "tr": "Veri Analizi", "en": "Data Analysis", "de": "Datenanalyse" },
+        "sc2_t1": { "tr": "Gereksinim Toplama", "en": "Requirement Gathering", "de": "Anforderungserhebung" },
+        "sc2_t2": { "tr": "Kullanıcı Kabul Testi (UAT)", "en": "User Acceptance Testing (UAT)", "de": "Benutzerakzeptanztest (UAT)" },
+        "sc2_t3": { "tr": "İş Akışı Tasarımı", "en": "Workflow Design", "de": "Workflow-Design" },
+        "sc3_t1": { "tr": "Agile/Scrum", "en": "Agile/Scrum", "de": "Agile/Scrum" },
+        "exp_title_1": { "tr": "Profesyonel", "en": "Professional", "de": "Professionelle" },
+        "exp_title_2": { "tr": "Deneyim", "en": "Experience", "de": "Erfahrung" },
+        "job1_title": { "tr": "İş Analisti", "en": "Business Analyst", "de": "Business Analyst" },
+        "job1_date": { "tr": "Nisan 2023 – Aralık 2024 | İstanbul", "en": "April 2023 – December 2024 | Istanbul", "de": "April 2023 – Dezember 2024 | Istanbul" },
+        "job1_d1": { "tr": "Mikroservis mimarisi ve React tabanlı arayüz projelerinde modernizasyon süreçlerine aktif katkı.", "en": "Active contribution to modernization processes in microservice architecture and React-based interface projects.", "de": "Aktiver Beitrag zu Modernisierungsprozessen in der Microservices-Architektur und bei React-basierten Schnittstellenprojekten." },
+        "job1_d2": { "tr": "DEV, UAT ve Preprod ortamlarında React tabanlı ekranların manuel ve fonksiyonel testleri.", "en": "Manual and functional testing of React-based screens in DEV, UAT and Preprod environments.", "de": "Manuelle und funktionale Tests von React-basierten Bildschirmen in DEV-, UAT- und Preprod-Umgebungen." },
+        "job1_d3": { "tr": "Kullanıcı deneyimini artırmak için UX/UI tasarım ekibi ile koordinasyon.", "en": "Coordination with UX/UI design team to increase user experience.", "de": "Zusammenarbeit mit dem UX/UI-Designteam zur Verbesserung der Benutzererfahrung." },
+        "job1_d4": { "tr": "Agile/Scrum çerçevesinde analiz, ürün dokümantasyonu ve SQL tabanlı veri doğrulama.", "en": "Analysis, product documentation and SQL-based data validation within Agile/Scrum framework.", "de": "Analyse, Produktdokumentation und SQL-basierte Datenvalidierung im Agile/Scrum-Framework." },
+        "job2_title": {"tr": "Yazılım Mühendisliği Stajyeri", "en": "Software Engineering Intern", "de": "Praktikant Software Engineering"},
+        "job2_date": {"tr": "Kasım 2022 – Şubat 2023 | İstanbul", "en": "November 2022 – February 2023 | Istanbul", "de": "November 2022 – Februar 2023 | Istanbul"},
+        "job2_d1": {"tr": "Temel Bankacılık ve Uygulama biriminde SQL tabanlı veri işleme ve yetkilendirme süreçleri.", "en": "SQL-based data processing and authorization processes in Core Banking and Application unit.", "de": "SQL-basierte Datenverarbeitung und Autorisierungsprozesse im Bereich Core Banking und Anwendungen."},
+        "job2_d2": {"tr": "Kritik bankacılık verilerini analiz etmek için gelişmiş SQL sorguları tasarımı.", "en": "Advanced SQL queries design to analyze critical banking data.", "de": "Design komplexer SQL-Abfragen zur Analyse kritischer Bankdaten."},
+        "job2_d3": {"tr": "Preprod test ortamında sürekli kontrol ve bankacılık operasyonlarında otomasyon desteği.", "en": "Continuous control in Preprod test environment and automation support in banking operations.", "de": "Kontinuierliche Kontrolle in der Preprod-Testumgebung und Automatisierungsunterstützung im Bankbetrieb."},
+        "job3_title": {"tr": "Yazılım Mühendisliği Stajyeri", "en": "Software Engineering Intern", "de": "Praktikant Software Engineering"},
+        "job3_date": {"tr": "Temmuz 2022 – Ağustos 2022 | İstanbul", "en": "July 2022 – August 2022 | Istanbul", "de": "Juli 2022 – August 2022 | Istanbul"},
+        "job3_d1": {"tr": "İstanbul için günlük hava durumu verilerini görselleştiren web uygulamasının geliştirilmesi.", "en": "Development of a web application visualizing daily weather data for Istanbul.", "de": "Entwicklung einer Webanwendung zur Visualisierung täglicher Wetterdaten für Istanbul."},
+        "job3_d2": {"tr": "C#, ASP.NET ve ilgili frameworkler ile geliştirme ve hata ayıklama süreçleri.", "en": "Development and debugging processes with C#, ASP.NET and related frameworks.", "de": "Entwicklungs- und Debugging-Prozesse mit C#, ASP.NET und zugehörigen Frameworks."},
+        "proj_title_1": {"tr": "Öne Çıkan", "en": "Featured", "de": "Ausgewählte"},
+        "proj_title_2": {"tr": "Projeler", "en": "Projects", "de": "Projekte"},
+        "p1_title": {"tr": "Bankacılık Mikroservis Dönüşümü", "en": "Banking Microservice Transformation", "de": "Banking Microservice-Transformation"},
+        "p1_desc": {"tr": "Eski monolitik yapıların modern, güvenli mikroservis mimarisine taşınması ve React arayüz entegrasyonu.", "en": "Migration of legacy monolithic structures to modern, secure microservices architecture and React interface integration.", "de": "Migration veralteter monolithischer Strukturen zu moderner, sicherer Microservices-Architektur und Integration von React-Schnittstellen."},
+        "p2_title": {"tr": "Yetkilendirme Otomasyonu Sistemi", "en": "Authorization Automation System", "de": "Autorisierungsautomatisierungssystem"},
+        "p2_desc": {"tr": "Bankacılık operasyonları için SQL tabanlı veri doğrulama ve yetkilendirme süreçlerinin otomatikleştirilmesi.", "en": "Automation of SQL-based data validation and authorization processes for banking operations.", "de": "Automatisierung von SQL-basierten Datenvalidierungs- und Autorisierungsprozessen für Bankgeschäfte."},
+        "p3_title": {"tr": "Hava Durumu Görselleştirme", "en": "Weather Visualization", "de": "Wettervisualisierung"},
+        "p3_desc": {"tr": "Günlük hava durumu verilerini toplayıp grafiklerle görselleştiren uçtan uca web uygulaması.", "en": "End-to-end web application that collects daily weather data and visualizes it with charts.", "de": "End-to-End-Webanwendung, die tägliche Wetterdaten sammelt und in Diagrammen visualisiert."},
+        "contact_title": {"tr": "İletişim", "en": "Contact", "de": "Kontakt"},
+        "contact_desc": {"tr": "Yeni projeler ve fırsatlar için benimle iletişime geçebilirsiniz.", "en": "You can contact me for new projects and opportunities.", "de": "Sie können mich für neue Projekte und Möglichkeiten kontaktieren."},
+        "loc_title": {"tr": "Lokasyon", "en": "Location", "de": "Standort"},
+        "form_name": {"tr": "İsminiz", "en": "Your Name", "de": "Ihr Name"},
+        "form_email": {"tr": "E-posta Adresiniz", "en": "Your Email", "de": "Ihre E-Mail"},
+        "form_message": {"tr": "Mesajınız", "en": "Your Message", "de": "Ihre Nachricht"},
+        "form_btn": {"tr": "Mesaj Gönder", "en": "Send Message", "de": "Nachricht Senden"},
+        "footer_rights": {"tr": "Tüm hakları saklıdır.", "en": "All rights reserved.", "de": "Alle Rechte vorbehalten."}
+    };
+
+    function changeLanguage(lang) {
+        localStorage.setItem('selectedLang', lang);
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            if (btn.dataset.lang === lang) {
+                btn.classList.add('active');
+            } else {
+                btn.classList.remove('active');
+            }
+        });
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.dataset.i18n;
+            if (translations[key] && translations[key][lang]) {
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = translations[key][lang];
+                } else if (el.tagName === 'TITLE') {
+                    document.title = translations[key][lang];
+                } else {
+                    el.innerHTML = translations[key][lang];
+                }
+            }
+        });
+    }
+
+    const savedLang = localStorage.getItem('selectedLang') || 'tr';
+    changeLanguage(savedLang);
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            changeLanguage(e.target.dataset.lang);
+        });
+    });
 });
