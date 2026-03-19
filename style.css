@@ -3,24 +3,24 @@
 ========================================= */
 :root {
     /* Colors */
-    --bg-dark: #0a0a0f;
-    --bg-surface: rgba(20, 20, 30, 0.6);
+    --bg-dark: #0f0c08;
+    --bg-surface: rgba(20, 15, 10, 0.6);
     --text-main: #f8fafc;
-    --text-muted: #94a3b8;
+    --text-muted: #cbd5e1;
     
-    /* Neon Accents */
-    --neon-cyan: #00f2fe;
-    --neon-pink: #ff007f;
-    --deep-blue: #4facfe;
-    --deep-purple: #7b2cbf;
+    /* Warm/Sunset Accents */
+    --neon-cyan: #fbbf24;
+    --neon-pink: #f97316;
+    --deep-blue: #b45309;
+    --deep-purple: #9a3412;
     
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, var(--neon-cyan), var(--deep-blue));
     --gradient-accent: linear-gradient(135deg, var(--neon-pink), var(--deep-purple));
     
     /* Glassmorphism */
-    --glass-bg: rgba(20, 20, 32, 0.4);
-    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-bg: rgba(15, 10, 5, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.1);
     --glass-blur: blur(16px);
     
     /* Metrics */
@@ -46,6 +46,11 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-dark);
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     color: var(--text-main);
     line-height: 1.6;
     overflow-x: hidden;
@@ -59,48 +64,6 @@ a {
 
 ul {
     list-style: none;
-}
-
-/* Background Orbs */
-.bg-orbs {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    overflow: hidden;
-    pointer-events: none;
-}
-
-.orb {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.15;
-    animation: float 10s infinite alternate ease-in-out;
-}
-
-.orb-pink {
-    width: 400px;
-    height: 400px;
-    background: var(--neon-pink);
-    top: -100px;
-    right: -100px;
-}
-
-.orb-cyan {
-    width: 500px;
-    height: 500px;
-    background: var(--neon-cyan);
-    bottom: -150px;
-    left: -150px;
-    animation-delay: -5s;
-}
-
-@keyframes float {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(-30px, 30px); }
 }
 
 /* =========================================
@@ -117,9 +80,9 @@ ul {
 }
 
 .glass-card:hover {
-    border-color: rgba(0, 242, 254, 0.3);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 
-                0 0 20px rgba(0, 242, 254, 0.1);
+    border-color: rgba(251, 191, 36, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 
+                0 0 20px rgba(251, 191, 36, 0.1);
     transform: translateY(-5px);
 }
 
@@ -134,27 +97,29 @@ ul {
     cursor: pointer;
     border: none;
     transition: var(--transition);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .btn-primary {
     background: var(--gradient-primary);
     color: #fff;
-    box-shadow: 0 4px 15px rgba(0, 242, 254, 0.3);
+    box-shadow: 0 4px 15px rgba(251, 191, 36, 0.3);
 }
 
 .btn-primary:hover {
-    box-shadow: 0 8px 25px rgba(0, 242, 254, 0.5);
+    box-shadow: 0 8px 25px rgba(251, 191, 36, 0.5);
     transform: translateY(-2px);
 }
 
 .btn-outline {
-    background: transparent;
+    background: rgba(15, 10, 5, 0.5);
+    backdrop-filter: blur(5px);
     border: 1px solid var(--neon-cyan);
     color: var(--neon-cyan);
 }
 
 .btn-outline:hover {
-    background: rgba(0, 242, 254, 0.1);
+    background: rgba(251, 191, 36, 0.15);
     transform: translateY(-2px);
 }
 
@@ -175,6 +140,7 @@ ul {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
 .divider {
@@ -200,11 +166,11 @@ ul {
 }
 
 .navbar.scrolled {
-    background: var(--glass-bg);
+    background: rgba(15, 10, 5, 0.85);
     backdrop-filter: var(--glass-blur);
     -webkit-backdrop-filter: var(--glass-blur);
     border-bottom: 1px solid var(--glass-border);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .nav-container {
@@ -221,6 +187,7 @@ ul {
     font-size: 1.8rem;
     font-weight: 800;
     letter-spacing: -1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .logo span {
@@ -233,10 +200,11 @@ ul {
 }
 
 .nav-link {
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-muted);
     position: relative;
     padding: 0.5rem 0;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
 .nav-link:hover, .nav-link.active {
@@ -274,7 +242,7 @@ ul {
 }
 
 .lang-btn {
-    background: transparent;
+    background: rgba(0,0,0,0.3);
     border: 1px solid var(--glass-border);
     color: var(--text-muted);
     font-size: 0.85rem;
@@ -291,7 +259,7 @@ ul {
 }
 
 .lang-btn.active {
-    background: rgba(0, 242, 254, 0.1);
+    background: rgba(251, 191, 36, 0.2);
     color: var(--neon-cyan);
     border-color: var(--neon-cyan);
 }
@@ -311,16 +279,22 @@ ul {
 
 .hero-content {
     flex: 1;
+    background: rgba(10, 5, 0, 0.4);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
 }
 
 .greeting {
     font-size: 1.2rem;
     color: var(--neon-cyan);
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
     display: block;
     margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
 .hero .title {
@@ -328,20 +302,24 @@ ul {
     line-height: 1.1;
     font-weight: 800;
     margin-bottom: 1rem;
+    text-shadow: 0 4px 8px rgba(0,0,0,0.6);
 }
 
 .hero .role {
     font-size: 2rem;
     color: var(--text-muted);
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
 .hero .description {
     font-size: 1.1rem;
-    color: var(--text-muted);
+    color: var(--text-main);
     max-width: 600px;
     margin-bottom: 2rem;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    font-weight: 500;
 }
 
 .location {
@@ -351,6 +329,8 @@ ul {
     margin-bottom: 3rem;
     font-size: 1.1rem;
     color: var(--text-main);
+    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    font-weight: 600;
 }
 
 .location-icon {
@@ -375,45 +355,8 @@ ul {
     overflow: hidden;
 }
 
-.card-header {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 1rem;
-    border-bottom: 1px solid var(--glass-border);
-}
-
-.mac-buttons {
-    display: flex;
-    gap: 8px;
-}
-
-.mac-buttons span {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-}
-
-.mac-buttons span:nth-child(1) { background: #ff5f56; }
-.mac-buttons span:nth-child(2) { background: #ffbd2e; }
-.mac-buttons span:nth-child(3) { background: #27c93f; }
-
-.card-body.terminal {
+.card-body.profile-snippet {
     padding: 2rem;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1rem;
-}
-
-.terminal p {
-    margin-bottom: 0.8rem;
-}
-
-.terminal .prompt {
-    color: var(--neon-cyan);
-    font-weight: bold;
-}
-
-.terminal .output {
-    color: var(--text-muted);
-    padding-left: 1rem;
 }
 
 /* =========================================
@@ -436,7 +379,7 @@ section {
     width: 50px;
     height: 50px;
     border-radius: 12px;
-    background: rgba(0, 242, 254, 0.1);
+    background: rgba(251, 191, 36, 0.15);
     color: var(--neon-cyan);
     display: flex;
     align-items: center;
@@ -448,6 +391,7 @@ section {
 .education-card h3, .skills-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .timeline-item {
@@ -483,9 +427,10 @@ section {
 }
 
 .skill-category h4 {
-    color: var(--text-muted);
+    color: var(--text-main);
     margin-bottom: 0.8rem;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .tags {
@@ -495,7 +440,7 @@ section {
 }
 
 .tags span {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.4);
     border: 1px solid var(--glass-border);
     padding: 0.4rem 1rem;
     border-radius: 20px;
@@ -504,7 +449,7 @@ section {
 }
 
 .tags span:hover {
-    background: rgba(0, 242, 254, 0.1);
+    background: rgba(251, 191, 36, 0.2);
     border-color: var(--neon-cyan);
     color: var(--neon-cyan);
 }
@@ -528,21 +473,23 @@ section {
 .job-title {
     font-size: 1.4rem;
     color: var(--text-main);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .company {
     color: var(--neon-cyan);
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-top: 0.3rem;
 }
 
 .exp-date {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.5);
     padding: 0.4rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
-    color: var(--text-muted);
+    color: var(--text-main);
+    font-weight: 500;
 }
 
 .exp-details {
@@ -604,10 +551,11 @@ section {
 
 .project-tags span {
     font-size: 0.8rem;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.5);
     padding: 0.3rem 0.8rem;
     border-radius: 12px;
     color: var(--neon-cyan);
+    border: 1px solid var(--glass-border);
 }
 
 /* Contact */
@@ -631,7 +579,7 @@ section {
 .info-icon {
     font-size: 1.5rem;
     color: var(--neon-pink);
-    background: rgba(255, 0, 127, 0.1);
+    background: rgba(249, 115, 22, 0.15);
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -663,7 +611,7 @@ section {
 .form-group input, .form-group textarea {
     width: 100%;
     padding: 1rem 1.2rem;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.4);
     border: 1px solid var(--glass-border);
     border-radius: 12px;
     color: var(--text-main);
@@ -675,7 +623,7 @@ section {
 .form-group input:focus, .form-group textarea:focus {
     outline: none;
     border-color: var(--neon-cyan);
-    box-shadow: 0 0 15px rgba(0, 242, 254, 0.2);
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.3);
 }
 
 .submit-btn {
@@ -688,7 +636,7 @@ footer {
     border-top: 1px solid var(--glass-border);
     padding: 2rem;
     text-align: center;
-    background: rgba(10, 10, 15, 0.8);
+    background: rgba(10, 5, 0, 0.85);
     backdrop-filter: var(--glass-blur);
 }
 
@@ -696,6 +644,7 @@ footer {
     font-size: 1.5rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .footer-logo span {
@@ -755,7 +704,8 @@ footer p {
         right: -100%;
         width: 100%;
         height: calc(100vh - var(--nav-height));
-        background: var(--bg-dark);
+        background: rgba(15, 10, 5, 0.95);
+        backdrop-filter: blur(20px);
         flex-direction: column;
         align-items: center;
         justify-content: center;
