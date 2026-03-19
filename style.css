@@ -46,9 +46,9 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-dark);
-    background-image: url('background.jpg.png');
+    background-image: url('background-cropped.png');
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-attachment: fixed;
     background-repeat: no-repeat;
     color: var(--text-main);
