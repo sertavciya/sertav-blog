@@ -79,7 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
         "form_email": { "tr": "E-posta Adresiniz", "en": "Your Email", "de": "Ihre E-Mail" },
         "form_message": { "tr": "Mesajınız", "en": "Your Message", "de": "Ihre Nachricht" },
         "form_btn": { "tr": "Mesaj Gönder", "en": "Send Message", "de": "Nachricht Senden" },
-        "footer_rights": { "tr": "Tüm hakları saklıdır.", "en": "All rights reserved.", "de": "Alle Rechte vorbehalten." }
+        "footer_rights": { "tr": "Tüm hakları saklıdır.", "en": "All rights reserved.", "de": "Alle Rechte vorbehalten." },
+        "tag_automation": { "tr": "Otomasyon", "en": "Automation", "de": "Automatisierung" },
+        "tag_webdev": { "tr": "Web Geliştirme", "en": "Web Development", "de": "Webentwicklung" },
+        "tag_microservice": { "tr": "Mikroservis", "en": "Microservice", "de": "Microservice" },
+        "tag_dataviz": { "tr": "Veri Görselleştirme", "en": "Data Visualization", "de": "Datenvisualisierung" }
     };
 
     // =========================================
