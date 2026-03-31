@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="head_title">Sertav Çiya Timurtaş | İş Analisti</title>
+    <meta name="description" content="Sertav Çiya Timurtaş – İş Analisti ve Yazılım Mühendisi. SQL, React, Mikroservis ve Agile/Scrum konularında deneyimli. Dresden, Almanya.">
+    <meta name="keywords" content="Business Analyst, İş Analisti, SQL, React, Mikroservis, Agile, Scrum, Dresden, Sertav Timurtaş">
+    <meta name="author" content="Sertav Çiya Timurtaş">
+    <meta property="og:title" content="Sertav Çiya Timurtaş | İş Analisti & Yazılım Mühendisi">
+    <meta property="og:description" content="Yenilikçi yazılım çözümleri, veri analizi ve mikroservis mimarileri üzerine odaklanan deneyimli bir iş analistiyim.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sertavciya.github.io/SertavCiya-BusinessAnalyst/">
+    <meta name="theme-color" content="#fbbf24">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
@@ -12,7 +20,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Background Image is set in style.css on the body element -->
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -43,7 +50,11 @@
             <div class="hero-content">
                 <span class="greeting" data-i18n="greeting">Merhaba, ben</span>
                 <h1 class="title">Sertav Çiya <span class="highlight">Timurtaş</span></h1>
-                <h2 class="role" data-i18n="role">İş Analisti ve Yazılım Mühendisi</h2>
+                <h2 class="role">
+                    <span class="role-static" data-i18n="role_static">İş Analisti</span>
+                    <span class="role-divider"> &amp; </span>
+                    <span class="typewriter" id="typewriter"></span><span class="cursor">|</span>
+                </h2>
                 <p class="description" data-i18n="description">
                     Yenilikçi yazılım çözümleri, veri analizi ve mikroservis mimarileri üzerine odaklanan deneyimli bir iş analistiyim. Modern arayüzler ve güçlü sistemler tasarlıyorum.
                 </p>
@@ -53,20 +64,41 @@
                 <div class="cta-group">
                     <a href="#contact" class="btn btn-primary" data-i18n="btn_contact">İletişime Geç</a>
                     <a href="#projects" class="btn btn-outline" data-i18n="btn_projects">Projelerimi Gör</a>
+                    <a href="https://linkedin.com/in/sertav-ciya-timurtas" target="_blank" class="btn btn-ghost">
+                        <i class="fab fa-linkedin-in"></i> <span data-i18n="btn_linkedin">LinkedIn</span>
+                    </a>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="glass-card hero-card">
-                    <div class="card-body profile-snippet" style="padding: 0.5rem;">
+                    <div class="card-body profile-snippet">
                         <h3 style="color: var(--neon-cyan); font-size: 1.1rem; margin-bottom: 0.5rem;" data-i18n="profile_title">Profil</h3>
-                        <p style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1.8rem;">Sertav Çiya Timurtaş</p>
-                        
+                        <p style="font-size: 1.4rem; font-weight: 600; margin-bottom: 1.5rem;">Sertav Çiya Timurtaş</p>
+
+                        <div class="profile-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="2">0</span>
+                                <span class="stat-plus">+</span>
+                                <span class="stat-label" data-i18n="stat_exp">Yıl Deneyim</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="3">0</span>
+                                <span class="stat-plus">+</span>
+                                <span class="stat-label" data-i18n="stat_proj">Proje</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="8">0</span>
+                                <span class="stat-plus">+</span>
+                                <span class="stat-label" data-i18n="stat_tech">Teknoloji</span>
+                            </div>
+                        </div>
+
                         <h3 style="color: var(--neon-cyan); font-size: 1.1rem; margin-bottom: 0.8rem;" data-i18n="skills_title">Temel Yetenekler</h3>
                         <div class="project-tags" style="gap: 0.6rem;">
-                            <span data-i18n="skill_1">İş Analizi</span> 
-                            <span>React</span> 
-                            <span>SQL</span> 
-                            <span data-i18n="skill_4">Çevik (Agile)</span> 
+                            <span data-i18n="skill_1">İş Analizi</span>
+                            <span>React</span>
+                            <span>SQL</span>
+                            <span data-i18n="skill_4">Çevik (Agile)</span>
                             <span>UAT</span>
                         </div>
                     </div>
@@ -92,34 +124,102 @@
                             <p class="degree" data-i18n="edu_degree">Bilgisayar Mühendisliği Lisans Derecesi</p>
                         </div>
                     </div>
+
+                    <div class="lang-section">
+                        <div class="icon-box" style="margin-top:2rem;"><i class="fas fa-language"></i></div>
+                        <h3 data-i18n="lang_title">Dil Yetkinlikleri</h3>
+                        <div class="language-bars">
+                            <div class="lang-item">
+                                <div class="lang-header">
+                                    <span data-i18n="lang_tr">Türkçe</span>
+                                    <span class="lang-level native" data-i18n="lang_tr_lvl">Anadil</span>
+                                </div>
+                                <div class="lang-bar"><div class="lang-fill" data-width="100"></div></div>
+                            </div>
+                            <div class="lang-item">
+                                <div class="lang-header">
+                                    <span data-i18n="lang_en">İngilizce</span>
+                                    <span class="lang-level professional" data-i18n="lang_en_lvl">Profesyonel (C1)</span>
+                                </div>
+                                <div class="lang-bar"><div class="lang-fill" data-width="85"></div></div>
+                            </div>
+                            <div class="lang-item">
+                                <div class="lang-header">
+                                    <span data-i18n="lang_de">Almanca</span>
+                                    <span class="lang-level intermediate" data-i18n="lang_de_lvl">Başlangıç (B1)</span>
+                                </div>
+                                <div class="lang-bar"><div class="lang-fill" data-width="45"></div></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
+
                 <div class="glass-card skills-card">
                     <div class="icon-box"><i class="fas fa-code"></i></div>
                     <h3 data-i18n="skills_section_title">Yetenekler</h3>
                     <div class="skills-wrapper">
                         <div class="skill-category">
                             <h4 data-i18n="skill_cat_1">Veri ve Veritabanı</h4>
-                            <div class="tags">
-                                <span data-i18n="sc1_t1">İleri Düzey SQL</span>
-                                <span data-i18n="sc1_t2">Sorgu Optimizasyonu</span>
-                                <span data-i18n="sc1_t3">Veri Analizi</span>
+                            <div class="skill-bars">
+                                <div class="skill-bar-item">
+                                    <div class="skill-bar-header">
+                                        <span>SQL</span>
+                                        <span class="skill-pct">90%</span>
+                                    </div>
+                                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+                                </div>
+                                <div class="skill-bar-item">
+                                    <div class="skill-bar-header">
+                                        <span data-i18n="sc1_t2">Sorgu Optimizasyonu</span>
+                                        <span class="skill-pct">80%</span>
+                                    </div>
+                                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+                                </div>
+                                <div class="skill-bar-item">
+                                    <div class="skill-bar-header">
+                                        <span data-i18n="sc1_t3">Veri Analizi</span>
+                                        <span class="skill-pct">85%</span>
+                                    </div>
+                                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+                                </div>
                             </div>
                         </div>
                         <div class="skill-category">
-                            <h4 data-i18n="skill_cat_2">İş Analizi</h4>
-                            <div class="tags">
-                                <span data-i18n="sc2_t1">Gereksinim Toplama</span>
-                                <span data-i18n="sc2_t2">Kullanıcı Kabul Testi (UAT)</span>
-                                <span data-i18n="sc2_t3">İş Akışı Tasarımı</span>
+                            <h4 data-i18n="skill_cat_2">İş Analizi & Test</h4>
+                            <div class="skill-bars">
+                                <div class="skill-bar-item">
+                                    <div class="skill-bar-header">
+                                        <span data-i18n="sc2_t1">Gereksinim Toplama</span>
+                                        <span class="skill-pct">90%</span>
+                                    </div>
+                                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+                                </div>
+                                <div class="skill-bar-item">
+                                    <div class="skill-bar-header">
+                                        <span>UAT</span>
+                                        <span class="skill-pct">85%</span>
+                                    </div>
+                                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+                                </div>
+                                <div class="skill-bar-item">
+                                    <div class="skill-bar-header">
+                                        <span data-i18n="sc2_t3">İş Akışı Tasarımı</span>
+                                        <span class="skill-pct">80%</span>
+                                    </div>
+                                    <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+                                </div>
                             </div>
                         </div>
                         <div class="skill-category">
-                            <h4 data-i18n="skill_cat_3">Araçlar ve Yöntemler</h4>
+                            <h4 data-i18n="skill_cat_3">Araçlar ve Geliştirme</h4>
                             <div class="tags">
-                                <span data-i18n="sc3_t1">Agile/Scrum</span>
+                                <span>Agile/Scrum</span>
                                 <span>JIRA</span>
                                 <span>MS Visio</span>
+                                <span>React</span>
+                                <span>C#</span>
+                                <span>ASP.NET</span>
+                                <span>Git</span>
                             </div>
                         </div>
                     </div>
@@ -133,12 +233,12 @@
                 <h2 class="section-title"><span data-i18n="exp_title_1">Profesyonel</span> <span class="highlight" data-i18n="exp_title_2">Deneyim</span></h2>
                 <div class="divider"></div>
             </div>
-            
+
             <div class="experience-timeline">
                 <!-- Intertech -->
                 <div class="exp-card glass-card">
                     <div class="exp-header">
-                        <div>
+                        <div class="exp-title-group">
                             <h3 class="job-title" data-i18n="job1_title">İş Analisti</h3>
                             <h4 class="company">Intertech Bilgi İşlem ve Pazarlama Ticaret A.Ş.</h4>
                         </div>
@@ -150,12 +250,15 @@
                         <li data-i18n="job1_d3">Kullanıcı deneyimini artırmak için UX/UI tasarım ekibi ile koordinasyon.</li>
                         <li data-i18n="job1_d4">Agile/Scrum çerçevesinde analiz, ürün dokümantasyonu ve SQL tabanlı veri doğrulama.</li>
                     </ul>
+                    <div class="exp-tags">
+                        <span>React</span><span>SQL</span><span>Agile/Scrum</span><span>UAT</span><span>JIRA</span>
+                    </div>
                 </div>
 
                 <!-- PASHA -->
                 <div class="exp-card glass-card">
                     <div class="exp-header">
-                        <div>
+                        <div class="exp-title-group">
                             <h3 class="job-title" data-i18n="job2_title">Yazılım Mühendisliği Stajyeri</h3>
                             <h4 class="company">PASHA Yatırım Bankası A.Ş.</h4>
                         </div>
@@ -166,12 +269,15 @@
                         <li data-i18n="job2_d2">Kritik bankacılık verilerini analiz etmek için gelişmiş SQL sorguları tasarımı.</li>
                         <li data-i18n="job2_d3">Preprod test ortamında sürekli kontrol ve bankacılık operasyonlarında otomasyon desteği.</li>
                     </ul>
+                    <div class="exp-tags">
+                        <span>SQL</span><span>Core Banking</span><span>Otomasyon</span>
+                    </div>
                 </div>
 
                 <!-- GTech -->
                 <div class="exp-card glass-card">
                     <div class="exp-header">
-                        <div>
+                        <div class="exp-title-group">
                             <h3 class="job-title" data-i18n="job3_title">Yazılım Mühendisliği Stajyeri</h3>
                             <h4 class="company">G Technology (GTech)</h4>
                         </div>
@@ -181,6 +287,9 @@
                         <li data-i18n="job3_d1">İstanbul için günlük hava durumu verilerini görselleştiren web uygulamasının geliştirilmesi.</li>
                         <li data-i18n="job3_d2">C#, ASP.NET ve ilgili frameworkler ile geliştirme ve hata ayıklama süreçleri.</li>
                     </ul>
+                    <div class="exp-tags">
+                        <span>C#</span><span>ASP.NET</span><span>Web Geliştirme</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -193,7 +302,11 @@
             </div>
             <div class="projects-grid">
                 <div class="project-card glass-card">
-                    <div class="project-image" style="background: linear-gradient(45deg, var(--neon-cyan), var(--deep-blue));"></div>
+                    <div class="project-image proj-img-1">
+                        <div class="project-overlay">
+                            <i class="fas fa-server fa-3x"></i>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <h3 data-i18n="p1_title">Bankacılık Mikroservis Dönüşümü</h3>
                         <p data-i18n="p1_desc">Eski monolitik yapıların modern, güvenli mikroservis mimarisine taşınması ve React arayüz entegrasyonu.</p>
@@ -203,7 +316,11 @@
                     </div>
                 </div>
                 <div class="project-card glass-card">
-                    <div class="project-image" style="background: linear-gradient(45deg, var(--neon-pink), var(--deep-purple));"></div>
+                    <div class="project-image proj-img-2">
+                        <div class="project-overlay">
+                            <i class="fas fa-shield-alt fa-3x"></i>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <h3 data-i18n="p2_title">Yetkilendirme Otomasyonu Sistemi</h3>
                         <p data-i18n="p2_desc">Bankacılık operasyonları için SQL tabanlı veri doğrulama ve yetkilendirme süreçlerinin otomatikleştirilmesi.</p>
@@ -213,7 +330,11 @@
                     </div>
                 </div>
                 <div class="project-card glass-card">
-                    <div class="project-image" style="background: linear-gradient(45deg, #f59e0b, #e11d48);"></div>
+                    <div class="project-image proj-img-3">
+                        <div class="project-overlay">
+                            <i class="fas fa-cloud-sun fa-3x"></i>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <h3 data-i18n="p3_title">Hava Durumu Görselleştirme</h3>
                         <p data-i18n="p3_desc">Günlük hava durumu verilerini toplayıp grafiklerle görselleştiren uçtan uca web uygulaması.</p>
@@ -232,7 +353,7 @@
                 <div class="divider"></div>
                 <p data-i18n="contact_desc">Yeni projeler ve fırsatlar için benimle iletişime geçebilirsiniz.</p>
             </div>
-            
+
             <div class="contact-container">
                 <div class="contact-info glass-card">
                     <div class="info-item">
@@ -250,6 +371,13 @@
                         </div>
                     </div>
                     <div class="info-item">
+                        <div class="info-icon"><i class="fab fa-github"></i></div>
+                        <div>
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/sertavciya" target="_blank">sertavciya</a></p>
+                        </div>
+                    </div>
+                    <div class="info-item">
                         <div class="info-icon"><i class="fas fa-location-dot"></i></div>
                         <div>
                             <h4 data-i18n="loc_title">Lokasyon</h4>
@@ -257,16 +385,16 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <form action="https://formsubmit.co/ciyatimurtas@gmail.com" method="POST" class="contact-form glass-card" id="contactForm">
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="İsminiz" data-i18n="form_name" required>
+                        <input type="text" id="name" name="name" data-i18n-placeholder="form_name" placeholder="İsminiz" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="E-posta Adresiniz" data-i18n="form_email" required>
+                        <input type="email" id="email" name="email" data-i18n-placeholder="form_email" placeholder="E-posta Adresiniz" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" rows="5" placeholder="Mesajınız" data-i18n="form_message" required></textarea>
+                        <textarea id="message" name="message" rows="5" data-i18n-placeholder="form_message" placeholder="Mesajınız" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary submit-btn"><span data-i18n="form_btn">Mesaj Gönder</span> <i class="fas fa-paper-plane"></i></button>
                 </form>
@@ -278,9 +406,19 @@
     <footer>
         <div class="footer-content">
             <div class="footer-logo"><img src="logo.png.png" alt="Sertav Logo" class="logo-img"></div>
+            <div class="footer-socials">
+                <a href="mailto:ciyatimurtas@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/sertav-ciya-timurtas" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/sertavciya" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
             <p>&copy; 2026 Sertav Çiya Timurtaş. <span data-i18n="footer_rights">Tüm hakları saklıdır.</span></p>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop" aria-label="Yukarı çık">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <!-- Scripts -->
     <script src="script.js"></script>
